@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+    <header>
+        <img class="xi2" src="xi2.jpg" alt="">
+        <h1>Anggota</h1>
+        <a href="homepage.html"><p>Home</p></a>
+    </header>
+    <div class="isian">
+    <div class="isi">
+        <h2>Atsir Hazimul Yafi</h2>
+        <h2>Muhammad Ihsan Rafiqi Haiilan</h2>
+        <h2>Enver Alif Wirawan</h2>
+        <h2>Fadhlan Akmal Insani</h2>
+        <h2>Muhammad Rizky Aditya</h2>
+    </div>
+</div>
+</div>
+</body>
+<style>
+
+    body {
+        background-position: center;
+        background-size: cover;
+        background: url(green\ 2.jpg)no-repeat;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        font-weight: 400;
+        cursor: pointer;
+        font-size: 20px;
+        list-style: none;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(252, 213, 39);
+        padding: 7px;
+        border-radius: 5px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        background-color: black; 
+    }
+    p:hover {
+        transform: translateY(-5px);
+        transition: 0.2s ease-in-out;
+        background-color: rgba(240, 248, 255, 0.226);
+        border: 1px solid black;
+        color: black;
+    }
+    h1 {
+        background-image: linear-gradient(to bottom, rgb(101, 211, 101), coral, white);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1.5px black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-shadow: 1px 0px 9px rgb(245, 207, 207);
+    }
+    img {
+        border-radius: 50%;
+        width: 80px;
+        border: 1px solid coral;
+        box-shadow: 1px 0px 10px purple;
+        height: auto;
+    }
+    .isian {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .isi {
+        animation: rgb-border 5s linear infinite;
+        width: 380px;
+        position: relative;
+        height: 300px;
+        border: 3px solid red;
+        margin-top:20px;
+        box-shadow: 1px 0px 8px black;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(250, 235, 215, 0.267);
+        text-align: center;
+    }
+    @keyframes rgb-border {
+            0% { border-color: red; }
+            33% { border-color: green; }
+            66% { border-color: blue; }
+            100% { border-color: red; }
+        }
+    .isi h2 {
+        color: rgb(37, 37, 31);
+        text-shadow: 1px 0px 5px rgb(240, 212, 87);
+    }
+</style>
+</html>
