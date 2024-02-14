@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <div class="y">
+        <h1 class="rotating">Website XI-2</h1>
+    </div>
+    <ul class="w">
+        <li><a href="">Home</a></li>
+        <li><a href="">SMAIT RJ</a></li>
+        <li><a href="">Materi</a></li>
+        <li><a href="">About Us</a></li>
+        <a href="https://www.instagram.com/thengineerinc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="xi2" src="xi2.jpg"></a>
+    </ul>
+    </header>
+    <div class="yayat">  
+    <div class="isi">
+        <h1>Selamat datang di website kami</h1>
+        <p>Ini adalah website kami dari kelas XI-2</p>
+        <p>di laman ini kami menyediakan materi</p>
+        <p>struktur kelas, mata pelajaran, dan sekolah kami</p>
+        
+    </div>
+    <div class="foto">
+        <img class="rj" src="download__22_-removebg-preview.png">
+    </div>
+</div>
+<div id="clock"></div>
+<div class="tombol">
+        <a href=""><button class="member">Member</button></a>
+    </div>
+</body>
+<style>
+    body {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background: url(green\ c.jpg)no-repeat;
+    }
+    header {
+        background: url(header\ rj.jpg)no-repeat;
+        background-size: cover;
+        justify-content: space-between;
+        background-position: center;
+        display: flex;
+        margin-bottom: 30px;
+        box-shadow: 1px 3px 4px black;
+       
+    }
+    .w {
+        display: flex;
+        gap: 40px;
+        color: rgb(0, 0, 0);
+    }
+    .w li {
+        list-style: none;
+        padding: 10px;
+    }
+    .w li a{
+        font-size: 16px;
+        background-color: rgba(12, 190, 36, 0.397);
+        border: 1px solid black;
+        border-radius: 10px;
+        color: black;
+        cursor: pointer;
+        padding: 5px;
+        text-decoration: none;
+        list-style: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 900;
+        margin-right:10px;
+    }
+    .w li :hover {
+        background-color: rgba(0, 0, 0, 0.151);
+        text-shadow: 2px 0px 4px white;       
+        color: rgb(255, 255, 255);
+        transition: 0.2s ease-in-out;
+        border-radius: 10px;
+        border: 1px solid white;
+        transform: translateY(-5px);
+    }
+    #clock {
+        font: bold;
+        font-size: 30px;
+        background-image: linear-gradient(to top, rgb(43, 194, 118), yellow);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px #ffffff;
+        -webkit-background-clip: text;
+        padding: 10px;
+        text-shadow: 2px 0px 4px rgb(88, 236, 3);
+        border-radius: 5px;
+        justify-content: center;
+        font-weight: bold;
+        text-align: center;
+    }
+    .y h1 {
+        font-size: 1.9em;
+        margin-left: 10px;
+        font-family:cursive;
+        background-image: linear-gradient(to bottom, rgb(245, 223, 96), rgb(255, 255, 255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px black;
+    }
+   .xi2 {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px;
+    position: relative;
+   }
+   .xi2:hover {
+    box-shadow: 1px 0px 4px purple;
+   }
+   .rj {
+    width: 110px;
+    margin-right: 50px;
+    padding-top: 60px;
+    animation: floating 3s ease-in-out infinite;
+   }
+
+   @keyframes floating {
+    0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px); /* Melayang ke atas */
+            }
+            100% {
+                transform: translateY(0);
+            }
+   }
+   .foto img {
+    display:grid;
+   }
+   .yayat {
+    display: flex;
+    margin-top: 70px;
+    gap: 30px;
+    justify-content: space-between;
+    margin: 10px;
+   }
+
+   .isi{
+    margin-left:50px;
+   }
+    .isi h1 {
+        color: white;
+        text-shadow: 2px 1px 3px rgb(2, 236, 80);
+    }
+    .isi p {
+        text-shadow: 2px 3px 8px greenyellow;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .tombol {
+        margin-top: 50px;
+        position:relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .tombol button {
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 800;
+        background-color: rgba(245, 245, 220, 0.185);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 20px;
+    }
+
+    .tombol button:hover {
+        transform: translatey(-5px);
+        transition: 0.3s ease-in-out;
+        color: white;
+        text-shadow:1px 2px 2px rgb(84, 163, 88);
+    }
+    
+</style>
+<script>
+    function updateTime() {
+        var now = new Date();
+        var timeString = now.toLocaleTimeString();
+
+        document.getElementById('clock').innerText = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+</script>
+</html>
