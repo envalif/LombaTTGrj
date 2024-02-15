@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="heder">
+        <div class="yaya">
+        <H1>About XI-2</H1>
+    </div>
+<div class="yoyo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://shibona.000webhostapp.com/">Materi</a></li>
+        <li><a href="SekolahRj.html">Smait RJ</a></li>
+    </div>
+    </div>
+    </header>
+    <div class="judul">       
+        <img id="fotbar" src="fotbar xi2.jpg">
+        <p>Total murid</p>
+        <p>28 Laki-laki. 7 Perempuan</p>
+    </div>
+    <div class="struktur">
+        <h1>Mata Pelajaran Pilihan</h1>
+    </div>
+    <div class="mapel">
+        <div class="fisika">
+            <img id="phy" src="fisika.jpg">
+            <h2>Fisika</h2>
+        </div>
+        <div class="math">
+            <img id="mat" src="matematika.jpg">
+            <h2>Matematika TL</h2>
+        </div>
+        <div class="infor">
+            <img id="kom" src="Informatika.jpg">
+            <h2>Informatika</h2>
+        </div>
+        <div class="geo">
+            <img id="graf" src="geografi.jpg">
+            <h2>Geografi</h2>
+        </div>
+    </div>
+    <div class="jurusan">
+        <h1>Jurusan yang relevan</h1>
+        <div class="tt">
+        <div class="namajurusan1">
+            <p>Teknik Informatika</p>
+            <p>Teknik Penerbangan</p>
+            <p>Desain Grafis</p>
+            <p>Arsitektur</p>
+        </div>
+        <div class="namajurusan2">
+            <p>Teknik sipil</p>
+            <p>Perencanaan Wilayah Kota</p>
+            <p>Teknik Elekto</p>
+            <p>Statistika</p>
+        </div>
+    </div>
+    </div>
+
+</body>
+<style>
+    body {
+        background-image: linear-gradient(to bottom, rgb(131, 240, 131), coral);
+    }
+    .judul p {
+        font-size: 15px;
+        font-weight: 900;
+    }
+    .heder {
+        display: flex;
+        justify-content: space-between;
+    }
+    .judul {
+        text-align: center;
+        justify-content: center;
+    }
+    #fotbar {
+        width: 300px;
+        border-radius: 5%;
+        box-shadow: 1px 0px 9px white;
+    }
+    #fotbar:hover {
+        transform: scale(1.6);
+        transition: 0.3s ease-in-out;
+    }
+    .yaya {
+        margin-left: 10px;
+    }
+    .yaya h1 {
+        color: rgb(204, 207, 34);
+        font-weight: bold;
+        text-shadow: 1px 0px 2px rgb(43, 1, 1);
+    }
+    .yoyo li {
+        list-style: none;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .yoyo li a:hover {
+        padding: 4px;
+        border-radius: 5%;
+        text-shadow: 1px 0px 9px rgb(0, 0, 0);
+        background-color: beige;
+        color: rgb(108, 228, 97);
+        transition: 0.2s ease-in-out;
+        transform: rotateY('5px');
+    }
+    .yoyo li a {
+        text-decoration: none;
+        color: white;
+    }
+    .yoyo {
+        display: flex;
+        gap: 30px;
+        padding: 30px;
+    }
+    .mapel img {
+        width: 120px;
+        border-radius: 5%;
+        box-shadow: 1px 0px 9px coral;
+    }
+    .mapel h2 {
+        font-size: 15px;
+    }
+    .mapel {
+        display: flex;
+        justify-content: space-between;
+    }
+    .fisika {
+        box-shadow: 1px 0px 9px;
+        width: 150px;
+        background-color: aliceblue;
+        justify-content: center;
+        border-radius: 10px;
+        height: 150px;
+        padding: 10px;
+        text-align: center;
+    }
+    .fisika:hover {
+        transform: translateY(-10px);
+        transition: 0.3s ease-in-out;
+        background-color: black;
+        color: white;
+    }
+    .struktur h1 {
+        text-align: center;
+        color:rgb(235, 235, 235);
+        text-shadow: 1px 0px 2px rgb(157, 255, 0)
+    }
+    .math {
+        box-shadow: 1px 0px 9px;
+        width: 150px;
+        background-color: aliceblue;
+        justify-content: center;
+        border-radius: 10px;
+        height: 150px;
+        padding: 10px;
+        text-align: center;
+    }
+    .math:hover {
+        transform: translateY(-10px);
+        transition: 0.3s ease-in-out;
+        background-color: black;
+        color: white
+    }
+    .infor {
+        box-shadow: 1px 0px 9px;
+        width: 150px;
+        background-color: aliceblue;
+        justify-content: center;
+        border-radius: 10px;
+        height: 150px;
+        padding: 10px;
+        text-align: center;
+    }
+    .infor:hover {
+        transform: translateY(-10px);
+        transition: 0.3s ease-in-out;
+        background-color: black;
+        color: white
+    }
+
+    .geo:hover{
+        transform: translateY(-10px);
+        transition: 0.3s ease-in-out;
+        background-color: black;
+        color: white
+    }
+.geo {
+    box-shadow: 1px 0px 9px;
+        width: 150px;
+        background-color: aliceblue;
+        justify-content: center;
+        border-radius: 10px;
+        height: 150px;
+        padding: 10px;
+        text-align: center;
+}
+.namajurusan1 {
+    box-shadow: 1px 0px 9px greenyellow;
+    width: 200px;
+    height: 150px;
+    padding:5px;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.192);
+    text-align: center;
+    border: 1px solid white;
+}
+.namajurusan2 {
+    box-shadow: 1px 0px 9px greenyellow;
+    width: 200px;
+    height: 150px;
+    padding:5px;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.192);
+    text-align: center;
+    border: 1px solid white;
+}
+.tt {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.tt p {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.jurusan h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 0px 9px yellow;
+}
+</style>
+</html>
