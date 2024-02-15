@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+    
+html, body {
+   margin: 0;
+   padding: 0;
+   
+   font-family: sans-serif;
+}
+
+
+    
+div#drop_zone {
+  height: 200px;
+  
+  width: 200px;
+  border: 2px dotted black;
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+  font-family: monospace;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.hideform {
+    display: none;
+}
+#fileList li {
+        cursor: pointer; 
+        padding: 10px; 
+        padding-left: 30px;
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        background-color: #f9f9f9; 
+        
+}
+#fileList li:hover {
+        background-color: #e0e0e0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  
+}
+a{
+  text-decoration: none;
+  color: #202124;
+  font-weight: bold;
+}
+.btn{
+    
+    margin:10px;
+}
+header {
+        
+        justify-content: space-between;
+        background-position: center;
+        display: flex;
+        
+        background-color: #F5DF99;
+        box-shadow: 0px 0px 5px black;
+        top:0;
+        width:100%;
+
+    }
+    .w img{
+        width: 60px;
+        border-radius: 50%;
+        border: 1px solid greenyellow;
+        
+    }
+    .w {
+        display: flex;
+        gap: 40px;
+        color: rgb(0, 0, 0);
+    }
+    .w li{
+        list-style: none;
+        padding: 10px;
+        padding-top: 20px;
+        
+    }
+    .w li a{
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        
+        
+        text-decoration: none;
+        list-style: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 900;
+        margin-right:10px;
+        
+    }
+    .w li :hover {
+        background-color: rgba(0, 0, 0, 0.151);
+            
+        color: rgb(255, 255, 255);
+        transition: 0.2s ease-in-out;
+        border-radius: 10px;
+        border: 1px solid white;
+        transform: rotateY('5px');
+    }
+    .xi2 {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 80px;
+    position: relative;
+    padding: 5px;
+   }
+   .xi2:hover {
+    box-shadow: 1px 0px 9px purple;
+    transition: 0.4s ease-in-out;
+    border-radius: 10%;
+   }
+  </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Navbar -->
+    <header>
+      <div class="y">
+          <a href="https://www.instagram.com/thengineerinc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="xi2" src="xi2.jpg"></a>
+      </div>
+      <ul class="w">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./SekolahRJ.html">SMAIT RJ</a></li>
+          <li><a href="./materi.html">Materi</a></li>
+          <li><a href="./about us.html">About Us</a></li>
+         
+      </ul>
+      </header>
+  <!-- Navbar End -->
+  
+<div class="center hideform">
+    <button id="close" style="float: right;">X</button>
+  <input type="file" name="file_to_upload" id="file_to_upload">
+  <hr>
+  
+  <div id="drop_zone">
+    DROP HERE
+  </div>
+  <p id="file_name"></p>
+<progress id="progress_bar" value="0" max="100" style="width:400px;"></progress>
+<p id="progress_status"></p>
+  <input type="button" value="Upload To Server" id="upload_file_button">
+</div>
+<button id="show" class="btn btn-dark">Upload</button>
+<a href="\uploads\" download ></a>
+
+
+<ul style="list-style: none;" id="fileList"></ul>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  window.onload = function() {
+      fetch('database.php')
+          .then(response => {
+              return response.json();
+          })
+          .then(files => {
+              const fileList = document.getElementById('fileList');
+              for (const key in files) {
+                  if (Object.hasOwnProperty.call(files, key)) {
+                      const fileName = files[key];
+                      const li = document.createElement('li');
+                      li.addEventListener('click', function() {
+                          window.location.href = 'uploads/' + encodeURIComponent(fileName);
+                      });
+                      const link = document.createElement('a');
+                      link.textContent = fileName;
+                      link.href = 'uploads/' + encodeURIComponent(fileName); 
+                      li.appendChild(link);
+                      fileList.appendChild(li);
+                  }
+              }
+          })
+  };
+</script>
+
+<script>
+    
+    
+
+    $('#show').on('click', function () {
+    $('.center').show();
+    $(this).hide();
+})
+
+    $('#close').on('click', function () {
+    $('.center').hide();
+    $('#show').show();
+})
+        const dropZone = document.getElementById('drop_zone');
+
+if (window.FileList && window.File) {
+  dropZone.addEventListener('dragover', event => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    // Adding a visual hint that the file is being copied to the window
+    event.dataTransfer.dropEffect = 'copy';
+  });
+
+  dropZone.addEventListener('drop', event => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    // Accessing the files that are being dropped to the window
+    const files = event.dataTransfer.files;
+
+    // Getting the file from uploaded files list (only one file in our case)
+    window.selectedFile = files[0];
+
+    // Assigning the name of file to our "file_name" element
+    document.getElementById('file_name').innerHTML = window.selectedFile.name;
+  });
+}
+    document.getElementById('file_to_upload').addEventListener('change', (event) => {
+      window.selectedFile = event.target.files[0];
+      document.getElementById('file_name').innerHTML = window.selectedFile.name;
+    });
+  
+    document.getElementById('upload_file_button').addEventListener('click', () => {
+      uploadFile(window.selectedFile);
+    });
+    function uploadFile(file) {
+  var formData = new FormData();
+  formData.append('file_to_upload', file);
+
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener('progress', progressHandler, false);
+  ajax.open('POST', 'uploader.php');
+  ajax.send(formData);
+}
+function progressHandler(event) {
+  var percent = (event.loaded / event.total) * 100;
+  document.getElementById('progress_bar').value = Math.round(percent);
+  document.getElementById('progress_status').innerHTML = Math.round(percent) + '% uploaded';
+}
+  </script>
+</body>
+</html>
